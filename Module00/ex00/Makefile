@@ -6,13 +6,13 @@
 #    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:29:56 by snagulap          #+#    #+#              #
-#    Updated: 2023/09/16 11:59:06 by snagulap         ###   ########.fr        #
+#    Updated: 2023/09/16 12:11:16 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 CC = g++
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
