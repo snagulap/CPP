@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 17:02:07 by snagulap          #+#    #+#             */
-/*   Updated: 2023/09/14 15:46:29 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/09/16 12:04:16 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int PHONEBOOK::index = 0;
 void PHONEBOOK::ADD(void)
 {
         std::string str;
-        int j = 0;      
         std::cout << "Enter First Name: ";
         std::getline(std::cin, str);
         this->contact[PHONEBOOK::index].setFname(str);
@@ -33,7 +32,7 @@ void PHONEBOOK::ADD(void)
         {
                 std::getline(std::cin, str);
                 this->contact[PHONEBOOK::index].setPnum(str);
-                for(int j = 0;j < str.length(); j++)
+                for(int j = 0;j < (int)str.length(); j++)
                 {
                         if(isdigit(str[j]))
                                 tr = 0;
