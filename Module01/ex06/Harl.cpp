@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*   harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 12:59:03 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/15 22:46:42 by snagulap         ###   ########.fr       */
+/*   Created: 2023/10/15 22:53:56 by snagulap          #+#    #+#             */
+/*   Updated: 2023/10/16 12:03:10 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Harl.hpp"
 
@@ -40,19 +41,7 @@ void Harl::error(void){
 
 
 void Harl::complain(std::string level){
-    // std::map<std::string, std::function<void()>> options ={
-    //     {"DEBUG",[this] {debug();}},
-    //     {"INFO", [this]{info();}},
-    //     {"WARNING", [this] {warning();}},
-    //     {"ERROR", [this] {error();}}
-    // };
-    // if(options.find(level) != options.end()){
-    //     options[level]();
-    // }
-    // else{
-    //     std::cout<<"Invalid Level"<<std::endl;
-    // }
-         MemberFunctionPtr   functions[] = {
+             MemberFunctionPtr   functions[] = {
               &Harl::debug,
               &Harl::info,
               &Harl::warning,
@@ -70,13 +59,26 @@ void Harl::complain(std::string level){
         bool found = false;
         for (int i = 0; i < 4; ++i) {
             if (level == levels[i]) {
-                (this->*functions[i])();
+                switch(i) {
+                case 0: (this->*functions[0])();
+                        break;
+                case 1:(this->*functions[0])();
+                        (this->*functions[1])();
+                        break;
+                case 2:(this->*functions[0])();
+                        (this->*functions[1])();
+                        (this->*functions[2])();
+                        break;
+                case 3:(this->*functions[0])();
+                        (this->*functions[1])();
+                        (this->*functions[2])();
+                        (this->*functions[3])();
+                        break;}
                 found = true;
-                break;
+
             }
         }
-
         if (!found) {
-            std::cout << "Invalid Level" << std::endl;
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         }
 }

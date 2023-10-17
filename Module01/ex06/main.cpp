@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 12:59:06 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/15 22:44:40 by snagulap         ###   ########.fr       */
+/*   Created: 2023/10/15 22:53:53 by snagulap          #+#    #+#             */
+/*   Updated: 2023/10/16 11:38:33 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include"Harl.hpp"
 
-#include<iostream>
-#include<map>
-#include <functional>
-
-class Harl{
-    private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-    public:
-    void complain(std::string level);
-    Harl(void);
-    ~Harl(void);
+int main(int ac, char** av){
     
-   typedef void (Harl::*MemberFunctionPtr)(void);
-};
-
-#endif
+    if (ac > 1)
+        std::cout<<"Enter only one arguement"<<std::endl;
+    Harl harl;
+    std::string level;
+    std::cout<<"Choose a level from DEBUG, INFO, WARNING, ERROR"<<std::endl;
+    level = av[1];
+    harl.complain(level);
+    return(0);
+}
