@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:45:52 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:41 by snagulap         ###   ########.fr       */
+/*   Created: 2023/10/24 19:06:38 by snagulap          #+#    #+#             */
+/*   Updated: 2023/10/25 16:51:49 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA__HPP
-#define HUMANA__HPP
+#include "ScavTrap.hpp"
 
-#include"weapon.hpp"
+int main() {
+    std::string	targetName = "Alex";
+	std::string	scavTrapName = "ST-Bob";
 
-class HumanA{
-    private:
-    std::string _name;
-    Weapon &_weapon;  
-    
-    public:
-    HumanA(std::string name, Weapon& weapon);
-    ~HumanA();
-    void attack();
-    void setWeapon(Weapon weapon);
-};
+	ScavTrap	scavTrap(scavTrapName);
+	scavTrap.takeDamage(0);
+	scavTrap.attack(targetName);
+	scavTrap.guardGate();
+	for (int i = 0; i < 5; i++)
+		scavTrap.beRepaired(10);
+	scavTrap.attack(targetName);
+	scavTrap.guardGate();
+	scavTrap.takeDamage(10);
+	scavTrap.guardGate();
 
-#endif
+    return 0;
+}

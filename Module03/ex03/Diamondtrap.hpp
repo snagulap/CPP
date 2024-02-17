@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Diamondtrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:45:52 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:41 by snagulap         ###   ########.fr       */
+/*   Created: 2024/01/28 17:16:22 by snagulap          #+#    #+#             */
+/*   Updated: 2024/01/28 19:19:11 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA__HPP
-#define HUMANA__HPP
+#ifndef Diamondtrap_HHP
+# define Diamondtrap_HHP
 
-#include"weapon.hpp"
-
-class HumanA{
+class Diamondtrap{
     private:
-    std::string _name;
-    Weapon &_weapon;  
-    
+        std::string Name;
     public:
-    HumanA(std::string name, Weapon& weapon);
-    ~HumanA();
-    void attack();
-    void setWeapon(Weapon weapon);
-};
+        Diamondtrap();
+        Diamondtrap(std::string Name);
+        ~Diamondtrap();
+        Diamondtrap(const Diamondtrap& cpy);
+        Diamondtrap& operator=(const Diamondtrap& f);
+        
+        using ScavTrap::attack;
+        void whoAmI(void);
+}
+
 
 #endif

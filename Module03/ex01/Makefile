@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/16 12:07:28 by snagulap          #+#    #+#              #
-#    Updated: 2023/10/20 19:47:43 by snagulap         ###   ########.fr        #
+#    Created: 2023/10/24 19:14:42 by snagulap          #+#    #+#              #
+#    Updated: 2023/10/25 16:49:45 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex01
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp fixed.cpp 
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

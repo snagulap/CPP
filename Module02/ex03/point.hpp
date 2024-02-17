@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:45:52 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:41 by snagulap         ###   ########.fr       */
+/*   Created: 2024/01/28 16:07:56 by snagulap          #+#    #+#             */
+/*   Updated: 2024/01/28 16:26:31 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA__HPP
-#define HUMANA__HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include"weapon.hpp"
+#include "fixed.hpp"
 
-class HumanA{
+class Point{
     private:
-    std::string _name;
-    Weapon &_weapon;  
-    
+        Fixed const x;
+        Fixed const y;
     public:
-    HumanA(std::string name, Weapon& weapon);
-    ~HumanA();
-    void attack();
-    void setWeapon(Weapon weapon);
+        Point(void);
+        ~Point(void);
+        Point(const float x, const float y);
+        Point(const Point& cpy);
+        Point& operator=(const Point& f);
+        Fixed getx(void) const;
+        Fixed gety(void) const;
+        
 };
+
 
 #endif

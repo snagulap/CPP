@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:58:22 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/15 21:34:37 by snagulap         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:34:11 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int main(int argc, char **argv){
         return 1;
     std::fstream fio;
     char* filename = argv[1];
-    const char* s1 = argv[2];
+    std::string s1 = argv[2];
+    if(s1.empty())
+        return 1;
     const char*  s2 = argv[3];
     std::ifstream inputfile(filename);
     fio.open(filename, std::ios::trunc | std::ios::in);
@@ -41,12 +43,12 @@ int main(int argc, char **argv){
     while (inputfile.get(ch)) {
         buffer += ch;
         // Check if buffer contains s1
-        if (buffer.size() >= std::strlen(s1) && buffer.find(s1) != std::string::npos) {
+        if (buffer.size() >= s1.size() && buffer.find(s1) != std::string::npos) {
             // Replace s1 with s2 and write it to the output file
             size_t pos;
             while ((pos = buffer.find(s1)) != std::string::npos) {
                 outputfile << buffer.substr(0, pos) << s2;
-                buffer = buffer.substr(pos + std::strlen(s1));
+                buffer = buffer.substr(pos + s1.size());
             }
         }
     }

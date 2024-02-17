@@ -5,26 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 17:40:39 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/20 19:20:19 by snagulap         ###   ########.fr       */
+/*   Created: 2023/10/24 13:51:09 by snagulap          #+#    #+#             */
+/*   Updated: 2023/10/25 11:39:21 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Claptrap.hpp"
 
-int main( void ) {
-Fixed a;
-Fixed const b(10);
-Fixed const c(42.42f);
-Fixed const d(b);
-a = Fixed(1234.4321f);
-std::cout << "a is " << a << std::endl;
-std::cout << "b is " << b << std::endl;
-std::cout << "c is " << c << std::endl;
-std::cout << "d is " << d << std::endl;
-std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-return 0;
+int main(void){
+    ClapTrap claptrap("Zobies");
+    claptrap.attack("enemy");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(5);
+
+    std::string	trapName0 = "CT-Alex";
+	std::string	trapName1 = "CT-Bob";
+
+	ClapTrap	trap0(trapName0);
+	ClapTrap	trap1(trapName1);
+
+	trap0.beRepaired(0);
+	for (int i = 0; i < 9; i++) {
+		trap0.attack(trapName1);
+		trap1.takeDamage(0);
+	}
+	trap0.attack(trapName1);
+
+	trap1.takeDamage(5);
+	trap1.beRepaired(4);
+	trap1.attack(trapName0);
+	trap0.takeDamage(5);
+
+	trap1.takeDamage(4);
+	trap1.beRepaired(4);
 }

@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/16 12:07:28 by snagulap          #+#    #+#              #
-#    Updated: 2023/10/20 19:47:43 by snagulap         ###   ########.fr        #
+#    Created: 2023/12/29 16:40:24 by snagulap          #+#    #+#              #
+#    Updated: 2023/12/29 16:46:46 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
-CC = g++
+NAME = ex00
+cc = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp fixed.cpp 
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:45:52 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:41 by snagulap         ###   ########.fr       */
+/*   Created: 2024/01/01 17:51:26 by snagulap          #+#    #+#             */
+/*   Updated: 2024/01/01 21:41:28 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA__HPP
-#define HUMANA__HPP
+#include"Bureaucrat.hpp"
 
-#include"weapon.hpp"
-
-class HumanA{
-    private:
-    std::string _name;
-    Weapon &_weapon;  
+Bureaucrat::Bureaucrat(){
+ std::cout<<"Constructor"<<std::endl;  
+}
+Bureaucrat::Bureaucrat(const std::string _name,unsigned int _grade):name(_name),grade(_grade){
     
-    public:
-    HumanA(std::string name, Weapon& weapon);
-    ~HumanA();
-    void attack();
-    void setWeapon(Weapon weapon);
-};
+}
+Bureaucrat::~Bureaucrat(){}
 
-#endif
+Bureaucrat::Bureaucrat(const Bureaucrat& copy){
+    *this = copy;
+}

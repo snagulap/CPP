@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:45:52 by snagulap          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:41 by snagulap         ###   ########.fr       */
+/*   Created: 2023/10/20 19:49:17 by snagulap          #+#    #+#             */
+/*   Updated: 2024/01/28 17:14:02 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA__HPP
-#define HUMANA__HPP
+#include "fixed.hpp"
+#include "point.hpp"
+#include "bsp.hpp"
 
-#include"weapon.hpp"
 
-class HumanA{
-    private:
-    std::string _name;
-    Weapon &_weapon;  
-    
-    public:
-    HumanA(std::string name, Weapon& weapon);
-    ~HumanA();
-    void attack();
-    void setWeapon(Weapon weapon);
-};
+int main( void ) {
 
-#endif
+Point a(0.0f, 0.0f);
+Point b(4.0f, 0.0f);
+Point c(2.0f, 3.0f);
+// Point point(2.0f, 1.0f);
+Point point(1.0f,1.0f);
+if (bsp(a, b, c, point) == true)
+    std::cout << "point is triangle" << std::endl;
+else
+    std::cout << "Point is not a triangle" << std::endl;
+return 0;
+}
