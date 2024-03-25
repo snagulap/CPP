@@ -6,15 +6,14 @@
 #    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 16:40:24 by snagulap          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2024/03/16 20:18:00 by snagulap         ###   ########.fr        #
+#    Updated: 2024/03/23 10:20:31 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex01
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp 
+SRCS = main.cpp span.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -34,9 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-=======
-#    Updated: 2023/12/29 16:40:25 by snagulap         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f

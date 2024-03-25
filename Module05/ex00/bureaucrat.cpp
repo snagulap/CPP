@@ -1,20 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-<<<<<<< HEAD
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
-=======
 /*   bureaucrat.cpp                                     :+:      :+:    :+:   */
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f
 /*                                                    +:+ +:+         +:+     */
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 17:51:26 by snagulap          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/01 16:32:27 by snagulap         ###   ########.fr       */
-=======
-/*   Updated: 2024/01/01 21:41:28 by snagulap         ###   ########.fr       */
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f
+/*   Created: 2024/03/25 18:10:33 by snagulap          #+#    #+#             */
+/*   Updated: 2024/03/25 18:10:38 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +16,6 @@ Bureaucrat::Bureaucrat(){
  std::cout<<"Constructor"<<std::endl;  
 }
 Bureaucrat::Bureaucrat(const std::string _name,unsigned int _grade):name(_name),grade(_grade){
-<<<<<<< HEAD
     try {
 		if (grade < 1)
 			throw Bureaucrat::GradeTooHighException();
@@ -39,16 +30,13 @@ Bureaucrat::Bureaucrat(const std::string _name,unsigned int _grade):name(_name),
 	{
 		std::cout << e.what() << std::endl;
 	}
-=======
     
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f
 }
 Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy){
     *this = copy;
 }
-<<<<<<< HEAD
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& f){
     if (this != &f)
@@ -97,5 +85,3 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat) {
     return os;
 }
 
-=======
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f

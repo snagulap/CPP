@@ -6,11 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 17:51:00 by snagulap          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/01 16:30:06 by snagulap         ###   ########.fr       */
-=======
-/*   Updated: 2024/01/01 19:09:56 by snagulap         ###   ########.fr       */
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f
+/*   Updated: 2024/03/25 18:10:06 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +22,6 @@ class Bureaucrat{
 
   public:
     Bureaucrat();
-<<<<<<< HEAD
     Bureaucrat(std::string name, unsigned int grade);
     ~Bureaucrat();
     Bureaucrat(const Bureaucrat& copy);
@@ -53,30 +48,4 @@ class Bureaucrat{
     };
 };
 
-std::ostream &operator<<(std::ostream& os, Bureaucrat &bureaucrat);
-=======
-    Bureacrat(std::string name, unsigned int grade);
-    ~Bureaucrat();
-    Bureaucrat(const Bureaucrat& copy);
-    Bureaucrat& operator=(const Bureaucrat& f);
-
-    std::string getName(void)const;
-    unsigned int getGrade(void)const;
-    void Toincrement(void);
-    void Todecrement(void);   
-    //exceptions
-    class GradeTooHighException :public std::Exception{
-        public:
-            virtual const char* what() const throw();
-    };
-
-    class GradeTooLowException :public std::Exception{
-        public:
-            virtual const char* what() const throw();
-    };
-    
-    std::ostream &operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
-};
-
->>>>>>> 39e43f1be0b1b04dfd0f6d467c679867ede2409f
 #endif

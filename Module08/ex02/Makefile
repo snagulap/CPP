@@ -6,14 +6,14 @@
 #    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 16:40:24 by snagulap          #+#    #+#              #
-#    Updated: 2024/03/17 18:46:21 by snagulap         ###   ########.fr        #
+#    Updated: 2024/03/23 15:08:02 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp 
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
